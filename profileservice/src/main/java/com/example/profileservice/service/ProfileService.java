@@ -1,11 +1,13 @@
 package com.example.profileservice.service;
 
+import com.example.commonservice.common.CommonException;
 import com.example.profileservice.model.ProfileDTO;
 import com.example.profileservice.model.mapper.ProfileMapper;
 import com.example.profileservice.repository.ProfileRepository;
 import com.example.profileservice.utils.ProfileStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -28,7 +30,7 @@ public class ProfileService {
     public Mono<ProfileDTO> createNewProfile(ProfileDTO profileDTO){
         return checkDuplicate(profileDTO.getEmail()).flatMap(result->{
             if(result){
-                return Mono.error(new Exception("Duplicate Email"));
+                return Mono.error(new CommonException("PF02","Duplicate profile !", HttpStatus.BAD_REQUEST));
             }else {
                 profileDTO.setStatus(ProfileStatus.STATUS_PROFILE_PENDING);
                 return createProfile(profileDTO);
