@@ -45,7 +45,7 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-
+<!--        setup mysql-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -55,7 +55,7 @@
             <artifactId>r2dbc-mysql</artifactId>
             <version>0.8.2.RELEASE</version>
         </dependency>
-
+<!--        liquibase-->
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-maven-plugin</artifactId>
@@ -64,6 +64,23 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
+        </dependency>
+<!--        common service-->
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>commonservice</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+<!--        json-validator-->
+<!--        <dependency>-->
+<!--            <groupId>com.networknt</groupId>-->
+<!--            <artifactId>json-schema-validator</artifactId>-->
+<!--            <version>1.0.77</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
 
