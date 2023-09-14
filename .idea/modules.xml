@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Webflux_Kafka.iml" filepath="$PROJECT_DIR$/.idea/Webflux_Kafka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonservice/commonservice.iml" filepath="$PROJECT_DIR$/commonservice/commonservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/profileservice/profileservice.iml" filepath="$PROJECT_DIR$/profileservice/profileservice.iml" />
     </modules>
   </component>
