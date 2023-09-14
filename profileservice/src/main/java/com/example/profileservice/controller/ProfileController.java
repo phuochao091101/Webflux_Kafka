@@ -31,7 +31,7 @@ public class ProfileController {
     @PostMapping
     public ResponseEntity<Mono<ProfileDTO>> createNewProfile(@RequestBody String requestStr){
         InputStream inputStream = ProfileController.class.getClassLoader().getResourceAsStream(Constant.JSON_REQ_CREATE_PROFILE);
-        CommonFunction.jsonValidate(inputStream,requestStr);
+        CommonFunction.jsonValidate(inputStream,requestStr);//validate request
         return ResponseEntity.status(HttpStatus.CREATED).body(profileService.createNewProfile(gson.fromJson(requestStr,ProfileDTO.class)));
     }
 }
