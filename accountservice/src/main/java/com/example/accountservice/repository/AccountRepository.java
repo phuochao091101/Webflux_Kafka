@@ -1,4 +1,8 @@
 package com.example.accountservice.repository;
 
-public class AccountRepository {
+
+import com.example.accountservice.data.Account;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+
+public interface AccountRepository extends ReactiveCrudRepository<Account,String> {
 }
