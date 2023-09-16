@@ -16,8 +16,8 @@
             </not>
         </preConditions>
         <createTable tableName="account">
-            <column name="id" type="uuid">
-                <constraints primaryKey="true" nullable="false" unique="true"/>
+            <column name="id" type="varchar(36)">
+                <constraints primaryKey="true" nullable="false" />
             </column>
         </createTable>
     </changeSet>
