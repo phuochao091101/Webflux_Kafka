@@ -33,5 +33,6 @@ public class EventConsumer {
         accountDTO.setBalance(dto.getInitialBalance());
         accountDTO.setCurrency("USD");
         accountService.createNewAccount(accountDTO).subscribe();
+        log.info("Create success");
     }
 }
