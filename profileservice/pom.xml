@@ -71,16 +71,23 @@
             <artifactId>commonservice</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-<!--        json-validator-->
-<!--        <dependency>-->
-<!--            <groupId>com.networknt</groupId>-->
-<!--            <artifactId>json-schema-validator</artifactId>-->
-<!--            <version>1.0.77</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
+        </dependency>
+        <!--		kafka-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor.kafka</groupId>
+            <artifactId>reactor-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
