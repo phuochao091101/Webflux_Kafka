@@ -1,6 +1,7 @@
 package com.example.profileservice.service;
 
 import com.example.commonservice.common.CommonException;
+
 import com.example.commonservice.utils.Constant;
 import com.example.profileservice.event.EventProducer;
 import com.example.profileservice.model.ProfileDTO;
