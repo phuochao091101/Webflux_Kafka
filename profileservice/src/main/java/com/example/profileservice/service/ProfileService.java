@@ -1,6 +1,7 @@
 package com.example.profileservice.service;
 
 import com.example.commonservice.common.CommonException;
+
 import com.example.commonservice.utils.Constant;
 import com.example.profileservice.event.EventProducer;
 import com.example.profileservice.model.ProfileDTO;
@@ -57,5 +58,19 @@ public class ProfileService {
                         eventProducer.send(Constant.PROFILE_ONBOARDING_TOPIC,gson.toJson(dto)).subscribe();
                     }
                 });
+    }
+    public Mono<ProfileDTO> updateStatusProfile(ProfileDTO profileDTO){
+        return getDetailProfileByEmail(profileDTO.getEmail())
+                .flatMap(profile-> {
+                    profile.setStatus(profileDTO.getStatus());
+                    return profileRepository.save(ProfileMapper.dtoToEntity(profile));
+                })
+                .map(ProfileMapper::entityToDto)
+                .doOnError(throwable -> log.error(throwable.getMessage()));
+    }
+    public Mono<ProfileDTO> getDetailProfileByEmail(String email){
+        return profileRepository.findByEmail(email)
+                .map(ProfileMapper::entityToDto)
+                .switchIfEmpty(Mono.error(new CommonException("PF03", "Profile not found", HttpStatus.NOT_FOUND)));
     }
 }
